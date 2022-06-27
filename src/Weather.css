@@ -1,0 +1,51 @@
+.Weather {
+    max-width: 600px;
+    padding: 15px;
+    margin: 20px auto;
+    border-radius: 10px;
+    border: 2px solid linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+    padding: 25px 30px 20px 30px;
+    background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+    font-family: 'Rajdhani', sans-serif;
+
+}
+
+
+.Weather input[type=search] {
+    padding: 10px;
+    border-radius: 30px;
+    border-width: 4px;
+    font-family: "Poppins", sans-serif;
+    border-color: #98bbf0;
+    font-weight: lighter;
+}
+
+.Weather input[type=submit] {
+    background: #70c6f8;
+    width: 100px;
+    height: 40px;
+    position: relative;
+    margin-bottom: 25px;
+    margin-top: 5px;
+    border-radius: 32px;
+    text-align: center;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-weight: lighter;
+    border: 1px solid #2daef8;
+}
+
+.city {
+    text-align: left;
+
+}
+
+.Weather p {
+    font-size: 60px;
+    margin-left: -100px;
+}
+
+
+.Weather li {
+    list-style: none;
+}
