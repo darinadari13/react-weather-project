@@ -1,10 +1,13 @@
 import React from 'react';
 import FormattedDate from './FormattedDate';
+
 export default function WeatherInfo(props) {
     return (
         <div className='WeatherInfo'>
         <div className='city'>
-            <h2>FormattedDate date={weatherData.date}</h2>
+            <h2>
+                <FormattedDate date={props.data.date}/>
+            </h2>
             <h1>{props.data.city}</h1>
                 <span>Overcast clouds</span>
                <img src={props.data.iconUrl} alt=''/>
