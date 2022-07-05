@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import axios from 'axios';
 import './Weather.css'
-
+import FormattedDate from "./FormattedDate";
+import WeatherInfo from './WeatherInfo'
 
 export default function Weather(props) {
    const [weatherData, setWeatherData] = useState({ready: false});
@@ -12,7 +13,7 @@ export default function Weather(props) {
             temperature: response.data.main.temp,
             humidity: response.data.main.humidity,
             wind: response.data.wind.speed,
-            date: 'Friday 16:25',
+            date: new Date(response.data.dt * 1000),
             description: response.data.weather[0].description,
             city: response.data.name,
             iconUrl: 'https://openweathermap.org/img/wn/04d@2x.png',
@@ -36,24 +37,7 @@ export default function Weather(props) {
                     </div>
                 </div>
             </form>
-            <div className='city'>
-            <h2>{weatherData.date}</h2>
-            <h1>{weatherData.city}</h1>
-                <span>Overcast clouds</span>
-               <img src={weatherData.iconUrl} alt=''/>
-            </div>
-               <div className='row'>
-                   <div className='col-6'>
-                <p >{Math.round(weatherData.temperature)}°C</p>
-                </div>
-                <div className='col-6'>
-                    <ul>
-                        <li>Wind: {weatherData.wind} km/h</li>
-                        <li>Humidity: {weatherData.humidity} %</li>
-                    </ul>
-                    </div>
-                </div>
-           
+            <WeatherInfo data={weatherData}/>
         </div>
     )
     } else {
