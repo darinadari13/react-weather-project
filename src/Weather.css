@@ -42,10 +42,13 @@
 
 .Weather p {
     font-size: 60px;
-    margin-left: -100px;
+    position: relative;
+    left: -80px;
 }
 
 
 .Weather li {
     list-style: none;
 }
+
+
