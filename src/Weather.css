@@ -46,9 +46,18 @@
     left: -80px;
 }
 
-
 .Weather li {
     list-style: none;
 }
+.temperature {
+    font-size: 60px;
+}
 
+.container-temperature {
+    text-align: left;
+}
 
+.unit {
+    position: relative;
+    top: -25px;
+}
