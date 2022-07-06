@@ -15,7 +15,7 @@ export default function WeatherInfo(props) {
             <h1>{props.data.city}</h1>
                 <span>Overcast clouds</span>
                 <div className='float-left'>
-                <WeatherIcon code={props.data.icon} />
+                <WeatherIcon code={props.data.icon} size={70}/>
                </div>
             </div>
                <div className='row'>
