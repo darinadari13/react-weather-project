@@ -10,6 +10,11 @@ const apiKey = 'e70f9b320d5f26eec768abf6830dd19d';
 export default function Weather({ defaultCity }) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(defaultCity);
+  const [unit, setUnit] = useState('celsius');
+
+  function setUnitMetric(metric) {
+    setUnit(metric);
+  }
 
   function handleResponse(response) {
     setWeatherData({
@@ -63,8 +68,8 @@ export default function Weather({ defaultCity }) {
           </div>
         </div>
       </form>
-      <WeatherInfo data={weatherData} />
-      <WeatherForecast coordinates={weatherData.coordinates} />
+      <WeatherInfo data={weatherData} unit={unit} setUnitMetric={setUnitMetric} />
+      <WeatherForecast coordinates={weatherData.coordinates} unit={unit} />
     </div>
   );
 }

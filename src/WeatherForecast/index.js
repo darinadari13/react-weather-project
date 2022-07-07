@@ -5,7 +5,7 @@ import WeatherForecastDay from '../WeatherForecastDay';
 
 const apiKey = 'e70f9b320d5f26eec768abf6830dd19d';
 
-export default function WeatherForecast({ coordinates }) {
+export default function WeatherForecast({ coordinates, unit }) {
   const [loaded, setLoaded] = useState(false);
   const [forecast, setForecast] = useState(null);
 
@@ -34,7 +34,7 @@ export default function WeatherForecast({ coordinates }) {
         {forecast.map((dailyForecast, index) => {
           if (index < 6) {
             return <div className='col' key={index}>
-              <WeatherForecastDay data={dailyForecast} />
+              <WeatherForecastDay data={dailyForecast} unit={unit} />
             </div>;
           } else {
             return null;
