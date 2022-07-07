@@ -1,14 +1,10 @@
 import React from 'react';
-import WeatherIcon from './WeatherIcon';
-
-const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-
-function convertToFahrenheit(celsius) {
-  return (celsius * 9 / 5) + 32;
-}
+import WeatherIcon from '../WeatherIcon';
+import { SHORT_DAYS, CELSIUS_UNIT } from '../consts';
+import { convertToFahrenheit } from '../utils';
 
 export default function WeatherForecastDay({ data, unit }) {
-  const isCelsius = unit === 'celsius';
+  const isCelsius = unit === CELSIUS_UNIT;
 
   function maxTemperature() {
     const temperature = isCelsius ? Math.round(data.temp.max) : Math.round(convertToFahrenheit(data.temp.max));
@@ -22,7 +18,7 @@ export default function WeatherForecastDay({ data, unit }) {
     const date = new Date(data.dt * 1000);
     const day = date.getDay();
 
-    return days[day];
+    return SHORT_DAYS[day];
   }
 
   return (

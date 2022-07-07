@@ -4,13 +4,12 @@ import './index.css';
 import WeatherInfo from '../WeatherInfo';
 import WeatherForecast from '../WeatherForecast';
 import PropTypes from 'prop-types';
-
-const apiKey = 'e70f9b320d5f26eec768abf6830dd19d';
+import { OPEN_WEATHER_API_KEY, CELSIUS_UNIT } from '../consts';
 
 export default function Weather({ defaultCity }) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(defaultCity);
-  const [unit, setUnit] = useState('celsius');
+  const [unit, setUnit] = useState(CELSIUS_UNIT);
 
   function setUnitMetric(metric) {
     setUnit(metric);
@@ -31,7 +30,7 @@ export default function Weather({ defaultCity }) {
   }
 
   function search() {
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${OPEN_WEATHER_API_KEY}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
 

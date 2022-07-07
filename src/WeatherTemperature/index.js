@@ -1,20 +1,18 @@
 import React from 'react';
 import './index.css';
-
-function convertToFahrenheit(celsius) {
-  return (celsius * 9 / 5) + 32;
-}
+import { FAHRENHEIT_UNIT, CELSIUS_UNIT } from '../consts';
+import { convertToFahrenheit } from '../utils';
 
 export default function WeatherTemperature({ unit, celsius, setUnitMetric }) {
-  const isCelsius = unit === 'celsius';
+  const isCelsius = unit === CELSIUS_UNIT;
 
   function showFarenheight(event) {
     event.preventDefault();
-    setUnitMetric('farenheit');
+    setUnitMetric(FAHRENHEIT_UNIT);
   }
   function showCelsius(event) {
     event.preventDefault();
-    setUnitMetric('celsius');
+    setUnitMetric(CELSIUS_UNIT);
   }
   return (
     <div className='container-temperature'>

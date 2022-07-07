@@ -1,8 +1,7 @@
 import React from 'react';
-import FormattedDate from './FormattedDate';
-import WeatherIcon from './WeatherIcon';
-import WeatherTemperature from './WeatherTemperature';
-import './Weather/index.css';
+import FormattedDate from '../FormattedDate';
+import WeatherIcon from '../WeatherIcon';
+import WeatherTemperature from '../WeatherTemperature';
 
 export default function WeatherInfo({ data, unit, setUnitMetric }) {
   return (
